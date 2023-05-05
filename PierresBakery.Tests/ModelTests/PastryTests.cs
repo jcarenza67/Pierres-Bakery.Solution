@@ -21,7 +21,7 @@ namespace PierresBakery.Tests
     {
       int pastryPrice = 2;
       int pastryOrderAmount = 5;
-      int expectedPrice = (pastryOrderAmount / 3) * 2 * pastryPrice + (pastryOrderAmount % 3);
+      int expectedPrice = (pastryOrderAmount / 3 * 2 + pastryOrderAmount % 3) * pastryPrice;
       Pastry myPastry = new Pastry(pastryPrice);
 
       int actualPrice = myPastry.PastryOrder(pastryOrderAmount);

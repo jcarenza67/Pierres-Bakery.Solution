@@ -15,7 +15,8 @@ namespace PierresBakery.Models
     
     public int PastryOrder(int eachPastryPrice)
     {
-      PastryAmount = (eachPastryPrice / 3) * 2 * PastryPrice + (eachPastryPrice % 3);
+      int freePastries = (eachPastryPrice / 4);
+      PastryAmount = (eachPastryPrice - freePastries) * PastryPrice;
       return PastryAmount;
     }
   }
