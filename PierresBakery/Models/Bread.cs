@@ -12,6 +12,12 @@ namespace PierresBakery.Models
     {
       BreadPrice = breadPrice;
     }
-
+    public int BreadOrder(int breadOrderAmount)
+    {
+      int fullPriceBread = (breadOrderAmount / 3) * 2;
+      int remainginBread = breadOrderAmount % 3;
+      BreadAmount = (fullPriceBread + remainginBread) * BreadPrice;
+      return BreadAmount;
+    }
   }
 }
