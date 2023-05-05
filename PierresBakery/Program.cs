@@ -39,9 +39,17 @@ namespace PierresBakery
 
       if (orderType == "bread" || orderType == "both")
       {
-        Console.WriteLine("How many loaves of bread would you like?");
-        int breadOrderAmount = int.Parse(Console.ReadLine());
-        breadTotal = myBread.BreadOrder(breadOrderAmount);
+        try
+        { 
+          Console.WriteLine("How many loaves of bread would you like?");
+          int breadOrderAmount = int.Parse(Console.ReadLine());
+          breadTotal = myBread.BreadOrder(breadOrderAmount);
+        }
+        catch (Exception)
+        {
+          Console.WriteLine("Invalid input please enter a number.");
+        }
+        
       }
 
       if (orderType == "pastries" || orderType == "both")
