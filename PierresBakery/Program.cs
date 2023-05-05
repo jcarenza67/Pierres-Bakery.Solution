@@ -37,6 +37,7 @@ namespace PierresBakery
 
       string orderType = "";
       bool validInputType = false;
+
       while (!validInputType)
       {
         Console.WriteLine("Would you like bread, pastries, or both? (Enter 'bread', 'pastries', or 'both')");
@@ -152,7 +153,56 @@ namespace PierresBakery
         }
       }
 
-      int orderTotal = breadTotal + pastryTotal;
+      bool validInputTip = false;
+      decimal tipAmount = 0;
+
+      while (!validInputTip)
+      {
+        Console.WriteLine("Would you like to leave a tip? (Enter 'yes' or 'no')");
+        string tipInput = Console.ReadLine().ToLower();
+
+        if (tipInput == "yes")
+        {
+          bool validInputPercentage = false;
+          decimal percentage = 0;
+
+          while (!validInputPercentage)
+          {
+            Console.WriteLine("How much would you like to tip? (Enter a % between 0 and 100)");
+            string inputPercent = Console.ReadLine();
+
+            if (decimal.TryParse(inputPercent, out percentage))
+            {
+              if (percentage >= 0 && percentage <= 100)
+              {
+                validInputPercentage = true;
+              }
+              else
+              {
+                Console.WriteLine("Invalid input. Please enter a number between 0% and 100%.");
+              }
+            }
+            else
+            {
+              Console.WriteLine("Invalid input. Please enter a number.");
+            }
+          }
+          int orderTotal = 0;
+          Tip tip = new Tip(percentage, orderTotal);
+          tipAmount = tip.CalculateTip();
+
+          validInputTip = true;
+        }
+        else if (tipInput == "no")
+        {
+          validInputTip = true;
+        }
+        else
+        {
+          Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
+        }
+      }
+      int fullTotal = (int)(breadTotal + pastryTotal + tipAmount);
 
       if (breadTotal > 0)
       {
@@ -164,7 +214,7 @@ namespace PierresBakery
         Console.WriteLine("Your pastry total is $" + pastryTotal + ".");
       }
 
-      Console.WriteLine("Your order total is $" + orderTotal + ".");
+      Console.WriteLine("Your order total is $" + fullTotal + " with tip.");
     }
   }
 }
