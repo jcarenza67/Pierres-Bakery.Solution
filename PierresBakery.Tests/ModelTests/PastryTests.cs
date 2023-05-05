@@ -18,9 +18,9 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void Pastry_Constructor_SetsPastryPrice()
     {
-      int eachPastryAmount = 2;
-      Pastry myPastry = new Pastry(eachPastryAmount);
-      Assert.AreEqual(eachPastryAmount, myPastry.PastryPrice);
+      int newPastryAmount = 2;
+      Pastry myPastry = new Pastry(2);
+      Assert.AreEqual(newPastryAmount, myPastry.PastryPrice);
     }
   }
 }
