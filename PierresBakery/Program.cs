@@ -9,7 +9,49 @@ namespace PierresBakery
   {
     public static void Main()
     {
-      // code goes here
+      Console.WriteLine("Welcome to Pierre's Bakery!");
+      Console.WriteLine("Bread is $5 a loaf, and we are having a buy 2 get 1 free sale!");
+      Console.WriteLine("Pastries are $2 each, and we are having a buy 3 get 1 free sale!");
+
+      int breadPrice = 5;
+      int pastryPrice = 2;
+
+      Bread myBread = new Bread(breadPrice);
+      Pastry myPastry = new Pastry(pastryPrice);
+
+      Console.WriteLine("Would you like bread, pastries, or both? (Enter 'bread', 'pastries', or 'both')");
+      string orderType = Console.ReadLine().ToLower();
+
+      int breadTotal = 0;
+      int pastryTotal = 0;
+
+      if (orderType == "bread" || orderType == "both")
+      {
+        Console.WriteLine("How many loaves of bread would you like?");
+        int breadOrderAmount = int.Parse(Console.ReadLine());
+        breadTotal = myBread.BreadOrder(breadOrderAmount);
+      }
+
+      if (orderType == "pastries" || orderType == "both")
+      {
+        Console.WriteLine("How many pastries would you like?");
+        int pastryOrderAmount = int.Parse(Console.ReadLine());
+        pastryTotal = myPastry.PastryOrder(pastryOrderAmount);
+      }
+
+      int orderTotal = breadTotal + pastryTotal;
+
+      if (breadTotal > 0)
+      {
+        Console.WriteLine("Your bread total is $" + breadTotal + ".");
+      }
+
+      if (pastryTotal > 0)
+      {
+        Console.WriteLine("Your pastry total is $" + pastryTotal + ".");
+      }
+
+      Console.WriteLine("Your order total is $" + orderTotal + ".");
     }
   }
 }
