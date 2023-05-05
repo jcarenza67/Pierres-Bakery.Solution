@@ -8,11 +8,15 @@ namespace PierresBakery.Models
   {
     public int PastryPrice { get; set; }
     public int PastryAmount { get; set; }
-    
-    public Pastry(int eachPastryPrice)
+    public Pastry(int pastryPrice)
     {
-      PastryPrice = eachPastryPrice;
-      PastryAmount = (PastryPrice / 3) * 2 * PastryPrice + (PastryPrice % 3) * PastryPrice;
+      PastryPrice = pastryPrice;
+    }
+    
+    public int PastryOrder(int eachPastryPrice)
+    {
+      PastryAmount = (eachPastryPrice / 3) * 2 * PastryPrice + (eachPastryPrice % 3);
+      return PastryAmount;
     }
   }
 }
