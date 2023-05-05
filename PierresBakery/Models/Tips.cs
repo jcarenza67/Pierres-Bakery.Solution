@@ -14,5 +14,9 @@ namespace PierresBakery.Models
       Percentage = percentage;
       Amount = amount;
     }
+    public decimal CalculateTip()
+    {
+      return Math.Round(Amount * (Percentage/100), 2);
+    }
   }
 }
