@@ -31,31 +31,64 @@ namespace PierresBakery
       Bread myBread = new Bread(breadPrice);
       Pastry myPastry = new Pastry(pastryPrice);
 
-      Console.WriteLine("Would you like bread, pastries, or both? (Enter 'bread', 'pastries', or 'both')");
-      string orderType = Console.ReadLine().ToLower();
+      string orderType = "";
+      bool validInputType = false;
+      while (!validInputType)
+      {
+        Console.WriteLine("Would you like bread, pastries, or both? (Enter 'bread', 'pastries', or 'both')");
+        orderType = Console.ReadLine().ToLower();
+        if (orderType == "bread" || orderType == "pastries" || orderType == "both")
+        {
+          validInputType = true;
+        }
+        else
+        {
+          Console.WriteLine("Invalid input. Please enter 'bread', 'pastries', or 'both'.");
+        }
+      }
 
       int breadTotal = 0;
       int pastryTotal = 0;
 
       if (orderType == "bread" || orderType == "both")
       {
-        try
-        { 
-          Console.WriteLine("How many loaves of bread would you like?");
-          int breadOrderAmount = int.Parse(Console.ReadLine());
-          breadTotal = myBread.BreadOrder(breadOrderAmount);
-        }
-        catch (Exception)
+        bool validInput = false;
+        int breadOrderAmount = 0;
+        while (!validInput)
         {
-          Console.WriteLine("Invalid input please enter a number.");
+          Console.WriteLine("How many loaves of bread would you like?");
+          string input = Console.ReadLine();
+          if (int.TryParse(input, out breadOrderAmount))
+          {
+            validInput = true;
+            breadTotal = myBread.BreadOrder(breadOrderAmount);
+          }
+          else
+          {
+            Console.WriteLine("Invalid input. Please enter a number.");
+          }
         }
-        
+        breadTotal = myBread.BreadOrder(breadOrderAmount);
       }
 
       if (orderType == "pastries" || orderType == "both")
       {
-        Console.WriteLine("How many pastries would you like?");
-        int pastryOrderAmount = int.Parse(Console.ReadLine());
+        bool validInput = false;
+        int pastryOrderAmount = 0;
+        while (!validInput)
+        {
+          Console.WriteLine("How many pastries would you like?");
+          string input = Console.ReadLine();
+          if (int.TryParse(input, out pastryOrderAmount))
+          {
+            validInput = true;
+            pastryTotal = myPastry.PastryOrder(pastryOrderAmount);
+          }
+          else
+          {
+            Console.WriteLine("Invalid input. Please enter a number.");
+          }
+        }
         pastryTotal = myPastry.PastryOrder(pastryOrderAmount);
       }
 
