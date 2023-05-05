@@ -60,8 +60,15 @@ namespace PierresBakery
           string input = Console.ReadLine();
           if (int.TryParse(input, out breadOrderAmount))
           {
-            validInput = true;
-            breadTotal = myBread.BreadOrder(breadOrderAmount);
+            if (breadOrderAmount >= 0)
+            {
+              validInput = true;
+              breadTotal = myBread.BreadOrder(breadOrderAmount);
+            }
+            else
+            {
+              Console.WriteLine("Invalid input. Please enter a positive number.");
+            }
           }
           else
           {
@@ -81,8 +88,15 @@ namespace PierresBakery
           string input = Console.ReadLine();
           if (int.TryParse(input, out pastryOrderAmount))
           {
-            validInput = true;
-            pastryTotal = myPastry.PastryOrder(pastryOrderAmount);
+            if (pastryOrderAmount >= 0)
+            {
+              validInput = true;
+              pastryTotal = myPastry.PastryOrder(pastryOrderAmount);
+            }
+            else
+            {
+              Console.WriteLine("Invalid input. Please enter a positive number.");
+            } 
           }
           else
           {
