@@ -16,5 +16,17 @@ namespace PierresBakery.Tests
       Tip newTip = new Tip(percentage, amount);
       Assert.AreEqual(typeof(Tip), newTip.GetType());
     }
+
+    [TestMethod]
+    public void CalculateTip_ReturnsCorrectTip()
+    {
+      decimal percentage = 20;
+      decimal amount = 100;
+      decimal expectedTip = Math.Round(amount * (percentage/100), 2);
+      Tip myTip = new Tip(percentage, amount);
+
+      decimal actualTip = myTip.CalculateTip();
+      Assert.AreEqual(expectedTip, actualTip);
+    }
   }
 }
