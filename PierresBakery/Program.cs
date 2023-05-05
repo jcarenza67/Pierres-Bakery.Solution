@@ -9,8 +9,20 @@ namespace PierresBakery
   {
     public static void Main()
     {
-      Console.WriteLine("Welcome to Pierre's Bakery!");
-      Console.WriteLine("Bread is $5 a loaf, and we are having a buy 2 get 1 free sale!");
+      Console.Title = "Pierre's Bakery";
+      string title = @" 
+                                                              (                                                                        
+        (  (           (                           *   )      )\ )                          (         (            )                   
+        )\))(   '   (  )\             )      (   ` )  /(     (()/( (     (   (    (      (  )\      ( )\     )  ( /(    (   (    (     
+        ((_)()\ )   ))\((_) (   (     (      ))\   ( )(_))(    /(_)))\   ))\  )(   )(    ))\((_)(    )((_) ( /(  )\())  ))\  )(   )\ ) 
+        _(())\_)() /((_)_   )\  )\    )\  ' /((_) (_(_()) )\  (_)) ((_) /((_)(()\ (()\  /((_)   )\  ((_)_  )(_))((_)\  /((_)(()\ (()/( 
+        \ \((_)/ /(_)) | | ((_)((_) _((_)) (_))   |_   _|((_) | _ \ (_)(_))   ((_) ((_)(_))    ((_)  | _ )((_)_ | |(_)(_))   ((_) )(_))
+         \ \/\/ / / -_)| |/ _|/ _ \| '  \()/ -_)    | | / _ \ |  _/ | |/ -_) | '_|| '_|/ -_)   (_-<  | _ \/ _` || / / / -_) | '_|| || |
+          \_/\_/  \___||_|\__|\___/|_|_|_| \___|    |_| \___/ |_|   |_|\___| |_|  |_|  \___|   /__/  |___/\__,_||_\_\ \___| |_|   \_, |
+                                                                                                                                  |__/  
+      ";
+
+      Console.WriteLine(title);
       Console.WriteLine("Pastries are $2 each, and we are having a buy 3 get 1 free sale!");
 
       int breadPrice = 5;
