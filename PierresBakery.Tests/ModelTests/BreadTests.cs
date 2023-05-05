@@ -13,7 +13,7 @@ namespace PierresBakery.Tests
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
       int breadPrice = 5;
-      Bread newBread = new Bread(breadPrice);
+      Bread newBread = new Bread("wheat", breadPrice);
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
 
@@ -25,7 +25,7 @@ namespace PierresBakery.Tests
       int fullPriceBread = (breadOrderAmount / 3) * 2;
       int remainingBread = breadOrderAmount % 3;
       int expectedPrice = (fullPriceBread + remainingBread) * breadPrice;
-      Bread myBread = new Bread(breadPrice);
+      Bread myBread = new Bread("wheat", breadPrice);
 
       int actualPrice = myBread.BreadOrder(breadOrderAmount);
       Assert.AreEqual(expectedPrice, actualPrice);
