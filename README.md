@@ -31,6 +31,7 @@ _A bakery console app that gives the user a prompt with a price for both bread a
 ***bin***
 * _Then ***git add/push*** the .gitignore file ***separately*** to your repository_
 * _Run the program by typing ***dotnet run*** in the terminal to interact with the console app_
+* _Run the tests by moving into the PierresBakery.Tests folder and typing ***dotnet test*** in the terminal to interact with the console app_
 
 ***_Please contact me at josephwilfong91@gmail.com if you have any questions, ideas, or concerns._***
 
