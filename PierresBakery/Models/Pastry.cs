@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace PierresBakery.Models
 {
-  public class ClassName
+  public class Pastry
   {
     // properties, constructors, methods, etc. go here
   }
