@@ -6,10 +6,12 @@ namespace PierresBakery.Models
 {
   public class Pastry
   {
+    public string PastryType { get; set; }
     public int PastryPrice { get; set; }
     public int PastryAmount { get; set; }
-    public Pastry(int pastryPrice)
+    public Pastry(string pastryType, int pastryPrice)
     {
+      PastryType = pastryType;
       PastryPrice = pastryPrice;
     }
     
