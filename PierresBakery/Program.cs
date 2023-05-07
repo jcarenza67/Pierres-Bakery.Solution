@@ -41,7 +41,7 @@ namespace PierresBakery
         while (!validInputType)
         {
           Console.WriteLine("Would you like bread, pastries, or both? (Enter 'bread', 'pastries', or 'both')");
-          orderType = Console.ReadLine().ToLower();
+          orderType = Console.ReadLine().ToLower().Trim();
           if (orderType == "bread" || orderType == "pastries" || orderType == "both")
           {
             validInputType = true;
@@ -65,7 +65,7 @@ namespace PierresBakery
           while (!validInput)
           {
             Console.WriteLine("Which type of bread would you like? (Enter 'sourdough', 'wheat', or 'rye')");
-            string breadType = Console.ReadLine().ToLower();
+            string breadType = Console.ReadLine().ToLower().Trim();
 
             Bread selectedBread = null;
             switch (breadType)
@@ -85,7 +85,7 @@ namespace PierresBakery
             }
 
             Console.WriteLine("How many loaves of " + selectedBread.BreadType + " bread would you like?");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine().Trim();
 
             if (int.TryParse(input, out breadOrderAmount))
             {
@@ -113,7 +113,7 @@ namespace PierresBakery
           while (!validInput)
           {
             Console.WriteLine("What type of pastry would you like? (Enter 'croissant', 'danish', or 'bearclaw')");
-            string pastryType = Console.ReadLine().ToLower();
+            string pastryType = Console.ReadLine().ToLower().Trim();
 
             Pastry selectedPastry = null;
 
@@ -134,7 +134,7 @@ namespace PierresBakery
             }
 
             Console.WriteLine("How many " + selectedPastry.PastryType + "'s would you like?");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine().Trim();
 
             if (int.TryParse(input, out pastryOrderAmount))
             {
@@ -164,7 +164,7 @@ namespace PierresBakery
         while (!validInputTip)
         {
           Console.WriteLine("Would you like to leave a tip? (Enter 'yes' or 'no')");
-          string tipInput = Console.ReadLine().ToLower();
+          string tipInput = Console.ReadLine().ToLower().Trim();
 
           if (tipInput == "yes")
           {
@@ -173,8 +173,8 @@ namespace PierresBakery
 
             while (!validInputPercentage)
             {
-              Console.WriteLine("How much would you like to tip? (Enter a % between 0 and 100)");
-              string inputPercent = Console.ReadLine();
+              Console.WriteLine("How much would you like to tip? (Enter a number between 0 and 100)");
+              string inputPercent = Console.ReadLine().Trim();
 
               if (decimal.TryParse(inputPercent, out percentage))
               {

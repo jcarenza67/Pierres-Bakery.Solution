@@ -7,7 +7,7 @@
 ## Technologies Used
 
 * _C#_
-* _.NET_
+* _.NET SDK_
 * _MSTest_
 
 
@@ -26,12 +26,22 @@ _A bakery console app that gives the user a prompt with a price for both bread a
 * _Click the link provided above_
 * _Click the green dropdown button that says "Code"_
 * _Copy the repository HTTPS, clone it to your Desktop directory by typing ***git clone***, paste the copied URL right after **clone**, and then press enter_
+* _Open the file in your preferred code editor_
 * _Make sure the following files are in your .gitignore file: 
 ***obj***
 ***bin***
 * _Then ***git add/push*** the .gitignore file ***separately*** to your repository_
-* _Run the program by typing ***dotnet run*** in the terminal to interact with the console app_
+* _Download ***.NET 6 SDK*** by following the directions from this link [Here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)_
+* _**Open the file**. This will launch an installer which will walk you through installation steps. ***Use default settings***._
+* _Confirm the installation is successful by opening your terminal and running the command ***dotnet --version***._
+```
+6.0.402
+```
+* _Navigate to the PierresBakery folder in your terminal_
+* _Then type ***dotnet build*** in your terminal to make sure everything is up to date and there are no errors_
+* _Then run the program by typing ***dotnet run*** in the terminal to interact with the console app_
 * _Run the tests by moving into the PierresBakery.Tests folder and typing ***dotnet test*** in the terminal to interact with the console app_
+
 
 ***_Please contact me at josephwilfong91@gmail.com if you have any questions, ideas, or concerns._***
 
