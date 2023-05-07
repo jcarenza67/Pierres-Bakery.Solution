@@ -55,6 +55,8 @@ namespace PierresBakery
       int breadTotal = 0;
       int pastryTotal = 0;
 
+      decimal fullTotal = 0;
+
       if (orderType == "bread" || orderType == "both")
       {
         bool validInput = false;
@@ -153,8 +155,11 @@ namespace PierresBakery
         }
       }
 
+      fullTotal = breadTotal + pastryTotal;
+
       bool validInputTip = false;
       decimal tipAmount = 0;
+      decimal fullTotalWithTip = fullTotal;
 
       while (!validInputTip)
       {
@@ -176,6 +181,10 @@ namespace PierresBakery
               if (percentage >= 0 && percentage <= 100)
               {
                 validInputPercentage = true;
+                fullTotal = breadTotal + pastryTotal;
+                Tip tip = new Tip(percentage, fullTotal);
+                tipAmount = tip.Amount;
+                fullTotalWithTip = Math.Round(fullTotal + tipAmount, 2);
               }
               else
               {
@@ -187,11 +196,9 @@ namespace PierresBakery
               Console.WriteLine("Invalid input. Please enter a number.");
             }
           }
-          int orderTotal = 0;
-          Tip tip = new Tip(percentage, orderTotal);
-          tipAmount = tip.CalculateTip();
 
           validInputTip = true;
+
         }
         else if (tipInput == "no")
         {
@@ -202,7 +209,7 @@ namespace PierresBakery
           Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
         }
       }
-      int fullTotal = (int)(breadTotal + pastryTotal + tipAmount);
+      
 
       if (breadTotal > 0)
       {
@@ -214,7 +221,14 @@ namespace PierresBakery
         Console.WriteLine("Your pastry total is $" + pastryTotal + ".");
       }
 
-      Console.WriteLine("Your order total is $" + fullTotal + " with tip.");
+      if (tipAmount > 0)
+      {
+        Console.WriteLine("Your order total is $" + fullTotalWithTip + " with the $" + tipAmount + " tip included.");
+      }
+      else
+      {
+      Console.WriteLine("Your order total is $" + fullTotal + ".");
+      }
     }
   }
 }

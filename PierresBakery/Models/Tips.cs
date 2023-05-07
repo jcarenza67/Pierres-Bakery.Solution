@@ -9,14 +9,10 @@ namespace PierresBakery.Models
     public decimal Percentage { get; set; }
     public decimal Amount { get; set; }
 
-    public Tip(decimal percentage, decimal amount)
+    public Tip(decimal percentage, decimal fullTotal)
     {
       Percentage = percentage;
-      Amount = amount;
-    }
-    public decimal CalculateTip()
-    {
-      return Math.Round(Amount * (Percentage/100), 2);
+      Amount = Math.Round(fullTotal * (Percentage / 100), 2);
     }
   }
 }

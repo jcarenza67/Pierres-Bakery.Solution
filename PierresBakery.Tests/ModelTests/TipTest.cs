@@ -18,14 +18,14 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
-    public void CalculateTip_ReturnsCorrectTip()
+    public void Amount_ReturnsCorrectTip()
     {
       decimal percentage = 20;
       decimal amount = 100;
       decimal expectedTip = Math.Round(amount * (percentage/100), 2);
       Tip myTip = new Tip(percentage, amount);
 
-      decimal actualTip = myTip.CalculateTip();
+      decimal actualTip = myTip.Amount;
       Assert.AreEqual(expectedTip, actualTip);
     }
   }
