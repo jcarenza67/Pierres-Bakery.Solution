@@ -31,7 +31,7 @@ _A bakery console app that gives the user a prompt with a price for both bread a
 ***obj***
 ***bin***
 * _Then ***git add/push*** the .gitignore file ***separately*** to your repository_
-* _Download ***.NET 6 SDK*** by following the directions from this link [Here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)_
+* _Download ***.NET 6 SDK*** by following the directions from this link [Here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), this will also allow you to use **C#**_
 * _**Open the file**. This will launch an installer which will walk you through installation steps. ***Use default settings***._
 * _Confirm the installation is successful by opening your terminal and running the command ***dotnet --version***._
 ```
