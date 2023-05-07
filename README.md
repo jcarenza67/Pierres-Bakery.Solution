@@ -27,7 +27,7 @@ _A bakery console app that gives the user a prompt with a price for both bread a
 * _Click the green dropdown button that says "Code"_
 * _Copy the repository HTTPS, clone it to your Desktop directory by typing ***git clone***, paste the copied URL right after **clone**, and then press enter_
 * _Open the file in your preferred code editor_
-* _Make sure the following files are in your .gitignore file: 
+* _Make sure the following files are in your .gitignore file:_
 ***obj***
 ***bin***
 * _Then ***git add/push*** the .gitignore file ***separately*** to your repository_
