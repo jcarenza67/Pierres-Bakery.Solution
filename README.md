@@ -40,7 +40,9 @@ _A bakery console app that gives the user a prompt with a price for both bread a
 * _Navigate to the PierresBakery folder in your terminal_
 * _Then type ***dotnet build*** in your terminal to make sure everything is up to date and there are no errors_
 * _Then run the program by typing ***dotnet run*** in the terminal to interact with the console app_
-* _Run the tests by moving into the PierresBakery.Tests folder and typing ***dotnet test*** in the terminal to run tests_
+* _If you need to install MSTest, type ***dotnet tool install -g dotnet-suggest*** in your terminal_
+* _If you would like to run tests, make sure you are in the PierresBakery.Tests folder in your terminal and type ***dotnet restore*** to make sure all necessary packages are downloaded, then type ***dotnet build*** to make sure everything is up to date and there are no errors, and finally type ***dotnet test*** to run tests_
+
 
 
 ***_Please contact me at josephwilfong91@gmail.com if you have any questions, ideas, or concerns._***
